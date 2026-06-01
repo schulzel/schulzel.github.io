@@ -5,15 +5,15 @@ html(lang='en')
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
+        meta(name='description', content='Research website')
         meta(name='author', content='')
 
-        title Grayscale - Start Bootstrap Theme
+        title Lennart J. Schulze
 
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
 
         // Font Awesome icons (free version)
-        script(src='https://use.fontawesome.com/releases/v6.3.0/js/all.js', crossorigin='anonymous')
+        script(src='https://use.fontawesome.com/releases/v5.15.3/js/all.js', crossorigin='anonymous')
 
         // Google fonts
         link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
@@ -22,184 +22,210 @@ html(lang='en')
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
+        // Academicons
+        link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css')
+
     body#page-top
 
         // Navigation
-        nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
-            .container.px-4.px-lg-5
-                a.navbar-brand(href='#page-top') Start Bootstrap
+        nav#mainNav.navbar.navbar-expand-sm.navbar-light.fixed-top
+            .container.px-8.px-lg-5
+                a.navbar-brand(href='#page-top') Lennart J. Schulze
                 button.navbar-toggler.navbar-toggler-right(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     | Menu
                     i.fas.fa-bars
                 #navbarResponsive.collapse.navbar-collapse
                     ul.navbar-nav.ms-auto
                         li.nav-item
-                            a.nav-link(href='#about') About
+                            a.nav-link(href='#about')
+                                b About
                         li.nav-item
-                            a.nav-link(href='#projects') Projects
+                            a.nav-link(href='#projects')
+                                b Research
                         li.nav-item
-                            a.nav-link(href='#signup') Contact
+                            a.nav-link(href='#publications')
+                                b Publications
+                        li.nav-item
+                            a.nav-link(href='#contact')
+                                b Contact
+                        li.nav-item
+                            a.nav-link(href='cv.pdf')
+                                i.ai.ai-cv-square.fa-2x
+                        li.nav-item
+                            a.nav-link(href='https://github.com/schulzel')
+                                i.fab.fa-github.fa-2x
+                        li.nav-item
+                            a.nav-link(href='https://scholar.google.de/citations?user=xCpvLj0AAAAJ&hl=de')
+                                i.ai.ai-google-scholar-square.fa-2x
 
         // Masthead
         header.masthead
             .container.px-4.px-lg-5.d-flex.h-100.align-items-center.justify-content-center
                 .d-flex.justify-content-center
                     .text-center
-                        h1.mx-auto.my-0.text-uppercase Grayscale
-                        h2.text-white-50.mx-auto.mt-2.mb-5 A free, responsive, one page Bootstrap theme created by Start Bootstrap.
-                        a.btn.btn-primary(href='#about') Get Started
+                        h1.text-white.mx-auto.my-4.text-uppercase Lennart J. Schulze
+                        h2.text-white.mx-auto.mt-2.mb-5 Dr.-Ing. in Computational Sciences at the MPI-CBG and TU Dresden
+                        a.btn.btn-primary(href='#about') About Me
 
         // About
         section#about.about-section.text-center
             .container.px-4.px-lg-5
-                .row.gx-4.gx-lg-5.justify-content-center
-                    .col-lg-8
-                        h2.text-white.mb-4 Built with Bootstrap 5
-                        p.text-white-50
-                            | Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on 
-                            a(href='https://startbootstrap.com/theme/grayscale/') the preview page.
-                            | The theme is open source, and you can use it for any purpose, personal or commercial.
-                img.img-fluid(src='assets/img/ipad.png', alt='...')
+                h1.text-white About Me
+                .row.gx-4.gx-lg-5.align-items-center
+                    .col-xl-5
+                        img.img-fluid.mb-0.mb-lg-0(src='assets/img/headshot.jpg', alt='Lennart J. Schulze')
+                    .col-xl-7
+                        .text-justified.text-lg-left
+                            p.text-white.mb-3(align='left')
+                                | Hey! I am Lennart, I am a mechanical engineer by training and a computational scientist by practice. I have recently finished my Ph.D. thesis at the TU Dresden and the Max-Planck Institute of Molecular Cell Biology and Genetrics and am transitioning into industry. The past four years, I have been part of the group of Ivo Sbalzarini that focuses on scientific machine learning and numerical simulations. My research here has focused on the description and adaptive discretization of dynamic surfaces, which are ubiquitous in nature and engineering.
+                                |  Before, I have studied Mechanical Engineering for my bachelor's and master's degrees at the TU München, with stays in Tokyo and as a visiting researcher at the Northwestern University, where I have been working on the simulation of water waves in the group of Robert Dalrymple.
+                                br
+                                br
+                                | My work sits right at the intersection of scientific computing, physics and geometry.
+                                br
+                                br
+                                | For more details, see my 
+                                a(href='cv.pdf') CV
+                                | . You can reach me at 
+                                a(href='mailto:lennartjschulze@gmail.com') lennartjschulze@gmail.com
+                                | .
 
         // Projects
-        section#projects.projects-section.bg-light
-            .container.px-4.px-lg-5
+        section#projects.projects-section.bg-white
+            .container.px-3.px-lg-3
                 // Featured Project Row
-                .row.gx-0.mb-4.mb-lg-5.align-items-center
-                    .col-xl-8.col-lg-7
-                        img.img-fluid.mb-3.mb-lg-0(src='assets/img/bg-masthead.jpg', alt='...')
-                    .col-xl-4.col-lg-5
-                        .featured-text.text-center.text-lg-left
-                            h4 Shoreline
-                            p.text-black-50.mb-0
-                                | Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!
+                .row.gx-0.mb-4.mb-lg-7.align-items-center
+                    h1.text-white Research
+                    .col-xl-6.col-lg-7
+                        img.img-fluid.mb-3.mb-lg-0(src='assets/img/YOUR_FEATURED_VIDEO_OR_GIF.gif', alt='...')
+                    .col-xl-6
+                        .featured-text.text-justified.text-lg-left
+                            h4.text-white YOUR FEATURED PROJECT TITLE
+                            p.text-white-50.mb-5
+                                | YOUR FEATURED PROJECT DESCRIPTION.
+
                 // Project One Row
+                h2.text-black
+                    br
+                    br
+                    br
+                    | Published
+                .row.gx-0.justify-content-center
+                    .column.col-lg-6
+                        img.img-fluid(src='assets/img/YOUR_PROJECT_1_IMAGE.gif', alt='...')
+                    .column.col-lg-6
+                        .bg-green.h-100.project
+                            .d-flex.h-100
+                                .project-text.w-100.my-auto
+                                    h4.text-white PROJECT 1 TITLE
+                                    p.mb-0.text-white-75
+                                        | PROJECT 1 DESCRIPTION. Link to 
+                                        a(href='YOUR_PAPER_URL') paper
+                                        | .
+
+                .row.gx-0.justify-content-center
+                    .column.col-lg-6.order-lg-first
+                        .bg-black.h-100.project
+                            .d-flex.h-100
+                                .project-text.w-100.my-auto
+                                    h4.text-white PROJECT 2 TITLE
+                                    p.mb-0.text-white-75
+                                        | PROJECT 2 DESCRIPTION. Link to 
+                                        a(href='YOUR_PAPER_URL') paper
+                                        | .
+                    .column.col-lg-6
+                        img.img-fluid(src='assets/img/YOUR_PROJECT_2_IMAGE.png', alt='...')
+
+                h2.text-black
+                    br
+                    br
+                    br
+                    | In Progress
+
                 .row.gx-0.mb-5.mb-lg-0.justify-content-center
                     .col-lg-6
-                        img.img-fluid(src='assets/img/demo-image-01.jpg', alt='...')
+                        img.img-fluid(src='assets/img/YOUR_PROJECT_3_IMAGE.gif', alt='...')
                     .col-lg-6
-                        .bg-black.text-center.h-100.project
+                        .bg-green.h-100.project
                             .d-flex.h-100
-                                .project-text.w-100.my-auto.text-center.text-lg-left
-                                    h4.text-white Misty
-                                    p.mb-0.text-white-50
-                                        | An example of where you can put an image of a project, or anything else, along with a description.
-                // Project Two Row
+                                .project-text.w-100.my-auto
+                                    h4.text-white PROJECT 3 TITLE
+                                    p.mb-0.text-white-75
+                                        | PROJECT 3 DESCRIPTION.
+
                 .row.gx-0.justify-content-center
                     .col-lg-6
-                        img.img-fluid(src='assets/img/demo-image-02.jpg', alt='...')
+                        img.img-fluid(src='assets/img/YOUR_PROJECT_4_IMAGE.gif', alt='...')
                     .col-lg-6.order-lg-first
-                        .bg-black.text-center.h-100.project
+                        .bg-black.h-100.project
                             .d-flex.h-100
-                                .project-text.w-100.my-auto.text-center.text-lg-right
-                                    h4.text-white Mountains
-                                    p.mb-0.text-white-50
-                                        | Another example of a project with its respective description. These sections work well responsively as well!
+                                .project-text.w-100.my-auto
+                                    h4.text-white PROJECT 4 TITLE
+                                    p.mb-0.text-white-75
+                                        | PROJECT 4 DESCRIPTION.
 
-        // Signup
-        section#signup.signup-section
-            .container.px-4.px-lg-5
-                .row.gx-4.gx-lg-5
-                    .col-md-10.col-lg-8.mx-auto.text-center
-                        i.far.fa-paper-plane.fa-2x.mb-2.text-white
-                        h2.text-white.mb-5 Subscribe to receive updates!
+        // Publications
+        section#publications.publications-section.bg-white
+            .container-fluid.px-4.px-lg-5
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-lg-8
+                        h1.text-black.mb-4 Publications
 
-                        // * * * * * * * * * * * * * * *
-                        // * * SB Forms Contact Form * *
-                        // * * * * * * * * * * * * * * *
+                        h2.text-black.mb-3 2026
+                        p.text-black(align='left')
+                            | L. J. Schulze, and I. F. Sbalzarini: "Globally adaptive and locally regular point discretization of curved surfaces." Under review, 
+                            a(href='https://arxiv.org/abs/2605.03803') arXiv:2605.03803
 
-                        // This form is pre-integrated with SB Forms.
-                        // To make this form functional, sign up at
-                        // https://startbootstrap.com/solution/contact-forms
-                        // to get an API token!
-                        
-                        form#contactForm.form-signup(data-sb-form-api-token='API_TOKEN')
+                        h2.text-black.mb-3 2024
+                        p.text-black(align='left')
+                            | L. J. Schulze, S. K. T. Veettil, and I. F. Sbalzarini. "A high-order fully Lagrangian particle level-set method for dynamic surfaces." 
+                            a(href='https://doi.org/10.1016/j.jcp.2024.113262')
+                                i Journal of Computational Physics
+                            | , 515, 113262 (2024)
 
-                            // Email address input
+                        h2.text-black.mb-3 2021
+                        p.text-black(align='left')
+                            | V. Zago, L. J. Schulze, G. Bilotta, N. Al Mashaan, R. A. Dalrymple. "Overcoming excessive numerical dissipation in SPH modeling of water waves." 
+                            a(href='https://doi.org/10.1016/j.coastaleng.2021.104018')
+                                i Coastal Engineering
+                            | , 170, 104018 (2021)
 
-                            .row.input-group-newsletter
-                                .col
-                                    input#emailAddress.form-control(
-                                        type='email',
-                                        placeholder='Enter email address...',
-                                        aria-label='Enter email address...',
-                                        data-sb-validations='required,email'
-                                    )
-                                .col-auto
-                                    button#submitButton.btn.btn-primary.disabled(type='submit') Notify Me!
-                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:required')
-                                | An email is required.
-                            .invalid-feedback.mt-2(data-sb-feedback='emailAddress:email')
-                                | Email is not valid.
-
-                            // Submit success message
-                            //
-                            // This is what your users will see when the form
-                            // has successfully submitted
-
-                            #submitSuccessMessage.d-none
-                                .text-center.mb-3.mt-2.text-white
-                                    .fw-bolder Form submission successful!
-                                    | To activate this form, sign up at
-                                    br
-                                    a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                            // Submit error message
-                            //
-                            // This is what your users will see when there is
-                            // an error submitting the form
-
-                            #submitErrorMessage.d-none
-                                .text-center.text-danger.mb-3.mt-2 Error sending message!
+                        br
+                        br
+                        h1.text-black.mb-4 Thesis
+                        p.text-black(align='left')
+                            | L. J. Schulze. 
+                            i Mesh-free Methods for the Adaptive Discretization and High-order Approximation of Dynamic Surfaces.
+                            |  Ph.D. thesis, TU Dresden, October 2025.
 
         // Contact
-        section.contact-section.bg-black
-            .container.px-4.px-lg-5
-                .row.gx-4.gx-lg-5
-                    .col-md-4.mb-3.mb-md-0
+        section#contact.contact-section.bg-black
+            .container-fluid.px-4.px-lg-5
+                h1.text-white(align='center') Contact Me
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-md-auto.mb-3.mb-md-0
                         .card.py-4.h-100
+                            .card-title.text-center
+                                a(href='mailto:lennartjschulze@gmail.com')
+                                    i.fas.fa-envelope.text-primary.mb-2.fa-3x
                             .card-body.text-center
-                                i.fas.fa-map-marked-alt.text-primary.mb-2
-                                h4.text-uppercase.m-0 Address
-                                hr.my-4.mx-auto
-                                .small.text-black-50 4923 Market Street, Orlando FL
-                    .col-md-4.mb-3.mb-md-0
-                        .card.py-4.h-100
-                            .card-body.text-center
-                                i.fas.fa-envelope.text-primary.mb-2
-                                h4.text-uppercase.m-0 Email
-                                hr.my-4.mx-auto
+                                i.fas.fa-map-marked-alt.text-primary.mb-2.fa-3x
                                 .small.text-black-50
-                                    a(href='#!') hello@yourdomain.com
-                    .col-md-4.mb-3.mb-md-0
-                        .card.py-4.h-100
-                            .card-body.text-center
-                                i.fas.fa-mobile-alt.text-primary.mb-2
-                                h4.text-uppercase.m-0 Phone
-                                hr.my-4.mx-auto
-                                .small.text-black-50 +1 (555) 902-8832
-                .social.d-flex.justify-content-center
-                    a.mx-2(href='#!')
-                        i.fab.fa-twitter
-                    a.mx-2(href='#!')
-                        i.fab.fa-facebook-f
-                    a.mx-2(href='#!')
-                        i.fab.fa-github
+                                    | Dresden, Germany
 
         // Footer
-        footer.footer.bg-black.small.text-center.text-white-50
-            .container.px-4.px-lg-5
-                | Copyright &copy; Your Website 2023
+        footer.footer.bg-black.small.text-white-50
+            .container.text-center.px-4.px-lg-5
+                | Built with Start Bootstrap 
+                a(href='https://github.com/StartBootstrap/startbootstrap-grayscale') Grayscale theme
+                | .
+                br
+                | Lennart J. Schulze 2026
 
         // Bootstrap core JS
-        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')
 
         // Core theme JS
         script(src='js/scripts.js')
-
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
         script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')

@@ -4,6 +4,10 @@
 
 .contact-section {
     padding-top: 5rem;
+    background: linear-gradient(to bottom,
+        $white 0%,
+        $black 4rem,
+        $black 100%);
 
     .card {
         border: 0;

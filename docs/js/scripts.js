@@ -15,7 +15,9 @@ window.addEventListener('DOMContentLoaded', event => {
         if (!navbarCollapsible) {
             return;
         }
-        if (window.scrollY === 0) {
+        const masthead = document.body.querySelector('.masthead');
+        const threshold = masthead ? masthead.offsetHeight - navbarCollapsible.offsetHeight : 0;
+        if (window.scrollY < threshold) {
             navbarCollapsible.classList.remove('navbar-shrink')
         } else {
             navbarCollapsible.classList.add('navbar-shrink')

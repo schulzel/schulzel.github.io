@@ -21,6 +21,8 @@
         color: $black;
         font-weight: 700;
         padding: 0.9rem 0;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
     }
 
     .navbar-nav {
@@ -48,20 +50,21 @@
 
         .navbar-brand {
             padding: 0.5rem 0;
-            color: fade-out($white, 0.5);
+            color: $black;
+            opacity: 0;
         }
 
         .nav-link {
             transition: none;
             padding: 2rem 1.5rem;
-            color: fade-out($white, 0.5);
+            color: $black;
 
             &:hover {
-                color: fade-out($white, 0.25);
+                color: fade-out($black, 0.25);
             }
 
             &:active {
-                color: $white;
+                color: $black;
             }
         }
 
@@ -70,6 +73,7 @@
 
             .navbar-brand {
                 color: $black;
+                opacity: 1;
             }
 
             .nav-link {

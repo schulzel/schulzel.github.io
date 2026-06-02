@@ -3,7 +3,11 @@
 // 
 
 .projects-section {
-    padding: 0 0 10rem 0;
+    padding: 6rem 0 3rem 0;
+    background: linear-gradient(to bottom,
+        $black 0%,
+        $white 4rem,
+        $white 100%);
 
     .featured-text {
         padding: 2rem;

@@ -9,13 +9,12 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Web font fallback for systems without Corbel (Lato is metric-similar)-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <!-- Academicons-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -41,9 +40,6 @@
                             <a class="nav-link" href="#contact"><b>Contact</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="cv.pdf"><i class="ai ai-cv-square fa-2x"></i></a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="https://github.com/schulzel"><i class="fab fa-github fa-2x"></i></a>
                         </li>
                         <li class="nav-item">
@@ -55,12 +51,17 @@
         </nav>
         <!-- Masthead-->
         <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="text-white mx-auto my-4 text-uppercase">Lennart J. Schulze</h1>
-                        <h2 class="text-white mx-auto mt-2 mb-5">Dr.-Ing. in Computational Sciences at the MPI-CBG and TU Dresden</h2>
-                        <a class="btn btn-primary" href="#about">About Me</a>
+            <video class="masthead-video" id="masthead-video" src="assets/img/thesis_valpha.mp4" autoplay="" muted="" playsinline="" preload="auto"></video>
+            <div class="masthead-overlay"></div>
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-md-auto text-md-start text-center">
+                        <h1 class="text-black my-2 text-uppercase">
+                            Lennart J.
+                            <br />
+                            Schulze
+                        </h1>
+                        <h2 class="text-black mt-2 mb-3">Dr.-Ing. in Computational Sciences at the MPI-CBG and TU Dresden</h2>
                     </div>
                 </div>
             </div>
@@ -79,13 +80,11 @@
                                 that focuses on scientific machine learning and numerical simulations. My research here has focused on the description and adaptive discretization of dynamic surfaces, which are ubiquitous in nature and engineering. Before, I have studied Mechanical Engineering for my bachelor's and master's degrees at the TU München, with stays in Tokyo and as a visiting researcher at the Northwestern University, where I have been working on the simulation of water waves in the group of Robert Dalrymple.
                                 <br />
                                 <br />
-                                My work sits right at the intersection of scientific computing, physics and geometry.
+                                My work sits right at the intersection of physics, numerical methods and high-performance computing.
                                 <br />
                                 <br />
-                                For more details, see my
-                                <a href="cv.pdf">CV</a>
-                                . You can reach me at
-                                <a href="mailto:lennartjschulze@gmail.com">lennartjschulze@gmail.com</a>
+                                You can reach me at
+                                <a class="email-link" data-u1="lennart" data-u2="jschulze" data-d1="gmail" data-d2="com" href="#"><span class="email-text">reach me by email</span></a>
                                 .
                             </p>
                         </div>
@@ -94,21 +93,21 @@
             </div>
         </section>
         <!-- Projects-->
-        <section class="projects-section bg-white" id="projects">
+        <section class="projects-section" id="projects">
             <div class="container px-3 px-lg-3">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8"><h1 class="text-black mb-2">Research</h1></div>
+                </div>
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 align-items-center">
                     <h1 class="text-white m-0 p-0" style="line-height: 0; height: 0; overflow: hidden">Research</h1>
                     <div class="col-12">
-                        <!-- Video NW of text-->
-                        <div class="row gx-0">
+                        <!-- Top: video left + text right; second video tucked under the text-->
+                        <div class="row gx-0" style="align-items: flex-start">
                             <div class="col-md-7">
                                 <div class="overflow-hidden"><video class="img-fluid" src="assets/img/thesis_valpha.mp4" autoplay="" loop="" muted="" playsinline="" alt="Morphogenetic simulation alpha" style="clip-path: inset(0 13% 0 0); margin-right: -13%; width: 100%"></video></div>
                             </div>
-                        </div>
-                        <!-- Text overlapping both videos-->
-                        <div class="row gx-0" style="margin-top: -7rem; margin-bottom: -8.5rem; position: relative; z-index: 2">
-                            <div class="col-md-8 mx-auto">
+                            <div class="col-md-5">
                                 <div class="featured-text text-justified text-lg-left p-4">
                                     <h4 class="text-black">Simulating morphogenetic models</h4>
                                     <p class="text-black mb-0">
@@ -118,19 +117,13 @@
                                         Manuscript in preparation.
                                     </p>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Video SE of text-->
-                        <div class="row gx-0">
-                            <div class="col-md-5"></div>
-                            <div class="col-md-7">
-                                <div class="overflow-hidden"><video class="img-fluid" src="assets/img/thesis_vgamma.mp4" autoplay="" loop="" muted="" playsinline="" alt="Morphogenetic simulation gamma" style="clip-path: inset(0 13% 0 0); width: 100%"></video></div>
+                                <div class="overflow-hidden" style="width: 140%; margin-left: -40%; margin-top: 1rem"><video class="img-fluid" src="assets/img/thesis_vgamma.mp4" autoplay="" loop="" muted="" playsinline="" alt="Morphogenetic simulation gamma" style="clip-path: inset(10% 13% 10% 10%); width: 100%"></video></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Project One Row-->
-                <div class="row gx-0 mb-4 align-items-center">
+                <div class="row gx-0 mb-4 align-items-center" style="margin-top: -9rem">
                     <div class="col-12">
                         <!-- Project description-->
                         <div class="row gx-0">
@@ -168,9 +161,9 @@
                                         <div class="featured-text text-justified text-lg-left pt-4 px-4 pb-0">
                                             <h4 class="text-white">Describing and quantifying dynamic surfaces in numerical simulations</h4>
                                             <p class="text-white mb-0">
-                                                Real-world problems involve complex, and often dynamic surfaces. Either as boundary conditions, or as the domain of interest. An illustrative example of a dynamic surface is a hydrodynamic, incompressible droplet under surface tension. We solve the full multi-phase Navier-Stokes equations and track the surface between the two fluids.
+                                                Real-world problems involve complex, and often dynamic surfaces. Either as boundary conditions, or as the domain of interest. An illustrative example of a dynamic surface is a hydrodynamic, incompressible droplet under surface tension, governed by the multi-phase Navier-Stokes equations.
                                                 <br />
-                                                We use local high-order polynomial regression to describe the surface and compute derivative geometric quantities such as surface normals and mean and Gaussian curvatures.
+                                                To track the surface, we propose a method based on local high-order polynomial regression, enabling the computation of derivative geometric quantities such as surface normals and mean and Gaussian curvatures.
                                                 <br />
                                                 <br />
                                                 The paper is available at the
@@ -188,35 +181,28 @@
                         </div>
                     </div>
                 </div>
-                <h2 class="text-black">
-                    <br />
-                    <br />
-                    <br />
-                    In Progress
-                </h2>
-                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/YOUR_PROJECT_3_IMAGE.gif" alt="..." /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-green h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto">
-                                    <h4 class="text-white">PROJECT 3 TITLE</h4>
-                                    <p class="mb-0 text-white-75">PROJECT 3 DESCRIPTION.</p>
+                <div class="row gx-0 mb-0 align-items-center">
+                    <div class="col-12">
+                        <!-- Project description-->
+                        <div class="row gx-0">
+                            <div class="col-md-8 mx-auto">
+                                <div class="featured-text text-justified text-lg-left pt-4 px-4 pb-0">
+                                    <h4 class="text-black">Saving computational resources in water wave simulations</h4>
+                                    <p class="text-black mb-0">
+                                        Adaptive resolution methods that place more computational nodes where required are a classic approach to reduce computational effort and accordingly speed up simulations, while retaining high accuracy. In this work, we proposed a different approach: While the point discretization of the domain of interest is homogeneous, we use a higher-order variant of Smoothed Particle Hydrodynamics (SPH) in regions with demand for high accuracy, and a standard, more cost-efficient variant in the other regions. Especially for deep water waves, this enables a much faster simulation of water wave propagation.
+                                        <br />
+                                        <br />
+                                        This work was presented at the SPHERIC 2022 International Workshop and its proceedings paper is available at
+                                        <a href="https://arxiv.org/abs/2511.10064">arXiv:2511.10064</a>
+                                        .
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/YOUR_PROJECT_4_IMAGE.gif" alt="..." /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto">
-                                    <h4 class="text-white">PROJECT 4 TITLE</h4>
-                                    <p class="mb-0 text-white-75">PROJECT 4 DESCRIPTION.</p>
-                                </div>
-                            </div>
+                        <!-- Image lower right (flush with text right edge)-->
+                        <div class="row gx-0">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-5 col-8"><img class="img-fluid mb-0" src="assets/img/waterWave.svg" alt="Water wave simulation" /></div>
                         </div>
                     </div>
                 </div>
@@ -230,7 +216,7 @@
                         <h1 class="text-black mb-4">Publications</h1>
                         <h2 class="text-black mb-3">2026</h2>
                         <p class="text-black" align="left">
-                            L. J. Schulze, and I. F. Sbalzarini: "Globally adaptive and locally regular point discretization of curved surfaces." Under review,
+                            L. J. Schulze, and I. F. Sbalzarini: "Globally adaptive and locally regular point discretization of curved surfaces." Under review, available at
                             <a href="https://arxiv.org/abs/2605.03803">arXiv:2605.03803</a>
                         </p>
                         <h2 class="text-black mb-3">2024</h2>
@@ -263,15 +249,13 @@
             </div>
         </section>
         <!-- Contact-->
-        <section class="contact-section bg-black" id="contact">
+        <section class="contact-section" id="contact">
             <div class="container-fluid px-4 px-lg-5">
                 <h1 class="text-white" align="center">Contact Me</h1>
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-auto mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-title text-center">
-                                <a href="mailto:lennartjschulze@gmail.com"><i class="fas fa-envelope text-primary mb-2 fa-3x"></i></a>
-                            </div>
+                        <div class="text-center">
+                            <a class="email-link" data-u1="lennart" data-u2="jschulze" data-d1="gmail" data-d2="com" href="#" aria-label="Email"><i class="fas fa-envelope text-primary mb-2 fa-3x"></i></a>
                         </div>
                     </div>
                 </div>
@@ -289,6 +273,31 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Slow masthead video and stop at end-->
+        <script>
+            (function () {
+                var v = document.getElementById('masthead-video');
+                if (!v) return;
+                v.playbackRate = 0.4;
+                v.addEventListener('loadedmetadata', function () {
+                    v.playbackRate = 0.4;
+                });
+            })();
+        </script>
+        <!-- Build mailto links from data attributes to avoid plain-text scraping-->
+        <script>
+            (function () {
+                document.querySelectorAll('a.email-link').forEach(function (a) {
+                    var u = (a.getAttribute('data-u1') || '') + (a.getAttribute('data-u2') || '');
+                    var d = (a.getAttribute('data-d1') || '') + '.' + (a.getAttribute('data-d2') || '');
+                    if (!u || !d) return;
+                    var addr = u + '\u0040' + d;
+                    a.setAttribute('href', 'mailto:' + addr);
+                    var t = a.querySelector('.email-text');
+                    if (t) t.textContent = addr;
+                });
+            })();
+        </script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

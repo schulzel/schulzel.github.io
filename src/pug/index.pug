@@ -15,15 +15,14 @@ html(lang='en')
         // Font Awesome icons (free version)
         script(src='https://use.fontawesome.com/releases/v5.15.3/js/all.js', crossorigin='anonymous')
 
-        // Google fonts
-        link(href='https://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet')
-        link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+        // Web font fallback for systems without Corbel (Lato is metric-similar)
+        link(href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i', rel='stylesheet')
 
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
         // Academicons
-        link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css')
+        link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css')
 
     body#page-top
 
@@ -49,9 +48,6 @@ html(lang='en')
                             a.nav-link(href='#contact')
                                 b Contact
                         li.nav-item
-                            a.nav-link(href='cv.pdf')
-                                i.ai.ai-cv-square.fa-2x
-                        li.nav-item
                             a.nav-link(href='https://github.com/schulzel')
                                 i.fab.fa-github.fa-2x
                         li.nav-item
@@ -60,12 +56,16 @@ html(lang='en')
 
         // Masthead
         header.masthead
-            .container.px-4.px-lg-5.d-flex.h-100.align-items-center.justify-content-center
-                .d-flex.justify-content-center
-                    .text-center
-                        h1.text-white.mx-auto.my-4.text-uppercase Lennart J. Schulze
-                        h2.text-white.mx-auto.mt-2.mb-5 Dr.-Ing. in Computational Sciences at the MPI-CBG and TU Dresden
-                        a.btn.btn-primary(href='#about') About Me
+            video#masthead-video.masthead-video(src='assets/img/thesis_valpha.mp4', autoplay='', muted='', playsinline='', preload='auto')
+            .masthead-overlay
+            .container.px-4.px-lg-5
+                .row.align-items-center
+                    .col-md-auto.text-md-start.text-center
+                        h1.text-black.my-2.text-uppercase
+                            | Lennart J.
+                            br
+                            | Schulze
+                        h2.text-black.mt-2.mb-3 Dr.-Ing. in Computational Sciences at the MPI-CBG and TU Dresden
 
         // About
         section#about.about-section.text-center
@@ -86,43 +86,39 @@ html(lang='en')
                                 | My work sits right at the intersection of physics, numerical methods and high-performance computing.
                                 br
                                 br
-                                | For more details, see my 
-                                a(href='cv.pdf') CV
-                                | . You can reach me at 
-                                a(href='mailto:lennartjschulze@gmail.com') lennartjschulze@gmail.com
+                                | You can reach me at 
+                                a.email-link(data-u1='lennart', data-u2='jschulze', data-d1='gmail', data-d2='com', href='#')
+                                    span.email-text reach me by email
                                 | .
 
         // Projects
-        section#projects.projects-section.bg-white
+        section#projects.projects-section
             .container.px-3.px-lg-3
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-lg-8
+                        h1.text-black.mb-2 Research
                 // Featured Project Row
                 .row.gx-0.mb-4.align-items-center
                     h1.text-white.m-0.p-0(style='line-height:0; height:0; overflow:hidden;') Research
                     .col-12
-                        // Video NW of text
-                        .row.gx-0
+                        // Top: video left + text right; second video tucked under the text
+                        .row.gx-0(style='align-items: flex-start;')
                             .col-md-7
                                 .overflow-hidden
                                     video.img-fluid(src='assets/img/thesis_valpha.mp4', autoplay='', loop='', muted='', playsinline='', alt='Morphogenetic simulation alpha', style='clip-path: inset(0 13% 0 0); margin-right: -13%; width: 100%;')
-                        // Text overlapping both videos
-                        .row.gx-0(style='margin-top: -7rem; margin-bottom: -8.5rem; position: relative; z-index: 2;')
-                            .col-md-8.mx-auto
+                            .col-md-5
                                 .featured-text.text-justified.text-lg-left.p-4
                                     h4.text-black Simulating morphogenetic models
                                     p.text-black.mb-0
                                         | Self-organizing shapes emerge from the interaction of physics and geometry. Here, we solve the non-linear and second-order reaction-diffusion equations within the continuously deforming surface, and allow for local growth depending on the concentration of the surface chemical. The PDE and the observed Turing patterns in the surface are influenced by the local emerging curvature, and the local curvature is determined by the PDE dynamics in the surface: A full feedback loop, from which organic shapes arise.
                                         br
                                         br
-                                        | Manuscript in preparation. 
-                        // Video SE of text
-                        .row.gx-0
-                            .col-md-5
-                            .col-md-7
-                                .overflow-hidden
-                                    video.img-fluid(src='assets/img/thesis_vgamma.mp4', autoplay='', loop='', muted='', playsinline='', alt='Morphogenetic simulation gamma', style='clip-path: inset(0 13% 0 0); width: 100%;')
+                                        | Manuscript in preparation.
+                                .overflow-hidden(style='width: 140%; margin-left: -40%; margin-top: 1rem;')
+                                    video.img-fluid(src='assets/img/thesis_vgamma.mp4', autoplay='', loop='', muted='', playsinline='', alt='Morphogenetic simulation gamma', style='clip-path: inset(10% 13% 10% 10%); width: 100%;')
 
                 // Project One Row
-                .row.gx-0.mb-4.align-items-center
+                .row.gx-0.mb-4.align-items-center(style='margin-top: -9rem;')
                     .col-12
                         // Project description
                         .row.gx-0
@@ -169,33 +165,25 @@ html(lang='en')
                                     .col-md-8
                                         video.img-fluid(src='assets/img/splittingDroplet.mp4', autoplay='', loop='', muted='', playsinline='', alt='Splitting droplet simulation')
 
-                h2.text-black
-                    br
-                    br
-                    br
-                    | In Progress
-
-                .row.gx-0.mb-5.mb-lg-0.justify-content-center
-                    .col-lg-6
-                        img.img-fluid(src='assets/img/YOUR_PROJECT_3_IMAGE.gif', alt='...')
-                    .col-lg-6
-                        .bg-green.h-100.project
-                            .d-flex.h-100
-                                .project-text.w-100.my-auto
-                                    h4.text-white PROJECT 3 TITLE
-                                    p.mb-0.text-white-75
-                                        | PROJECT 3 DESCRIPTION.
-
-                .row.gx-0.justify-content-center
-                    .col-lg-6
-                        img.img-fluid(src='assets/img/YOUR_PROJECT_4_IMAGE.gif', alt='...')
-                    .col-lg-6.order-lg-first
-                        .bg-black.h-100.project
-                            .d-flex.h-100
-                                .project-text.w-100.my-auto
-                                    h4.text-white PROJECT 4 TITLE
-                                    p.mb-0.text-white-75
-                                        | PROJECT 4 DESCRIPTION.
+                .row.gx-0.mb-0.align-items-center
+                    .col-12
+                        // Project description
+                        .row.gx-0
+                            .col-md-8.mx-auto
+                                .featured-text.text-justified.text-lg-left.pt-4.px-4.pb-0
+                                    h4.text-black Saving computational resources in water wave simulations
+                                    p.text-black.mb-0
+                                        | Adaptive resolution methods that place more computational nodes where required are a classic approach to reduce computational effort and accordingly speed up simulations, while retaining high accuracy. In this work, we proposed a different approach: While the point discretization of the domain of interest is homogeneous, we use a higher-order variant of Smoothed Particle Hydrodynamics (SPH) in regions with demand for high accuracy, and a standard, more cost-efficient variant in the other regions. Especially for deep water waves, this enables a much faster simulation of water wave propagation.
+                                        br
+                                        br
+                                        | This work was presented at the SPHERIC 2022 International Workshop and its proceedings paper is available at 
+                                        a(href='https://arxiv.org/abs/2511.10064') arXiv:2511.10064
+                                        | .
+                        // Image lower right (flush with text right edge)
+                        .row.gx-0
+                            .col-md-5
+                            .col-md-5.col-8
+                                img.img-fluid.mb-0(src='assets/img/waterWave.svg', alt='Water wave simulation')
 
         // Publications
         section#publications.publications-section.bg-white
@@ -239,15 +227,14 @@ html(lang='en')
                                 i Sächsische Landesbibliothek - Staats- und Universitätsbibliothek Dresden
                             | .
         // Contact
-        section#contact.contact-section.bg-black
+        section#contact.contact-section
             .container-fluid.px-4.px-lg-5
                 h1.text-white(align='center') Contact Me
                 .row.gx-4.gx-lg-5.justify-content-center
                     .col-md-auto.mb-3.mb-md-0
-                        .card.py-4.h-100
-                            .card-title.text-center
-                                a(href='mailto:lennartjschulze@gmail.com')
-                                    i.fas.fa-envelope.text-primary.mb-2.fa-3x
+                        .text-center
+                            a.email-link(data-u1='lennart', data-u2='jschulze', data-d1='gmail', data-d2='com', href='#', aria-label='Email')
+                                i.fas.fa-envelope.text-primary.mb-2.fa-3x
 
         // Footer
         footer.footer.bg-black.small.text-white-50
@@ -260,6 +247,29 @@ html(lang='en')
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')
+
+        // Slow masthead video and stop at end
+        script.
+            (function() {
+                var v = document.getElementById('masthead-video');
+                if (!v) return;
+                v.playbackRate = 0.4;
+                v.addEventListener('loadedmetadata', function () { v.playbackRate = 0.4; });
+            })();
+
+        // Build mailto links from data attributes to avoid plain-text scraping
+        script.
+            (function() {
+                document.querySelectorAll('a.email-link').forEach(function(a) {
+                    var u = (a.getAttribute('data-u1') || '') + (a.getAttribute('data-u2') || '');
+                    var d = (a.getAttribute('data-d1') || '') + '.' + (a.getAttribute('data-d2') || '');
+                    if (!u || !d) return;
+                    var addr = u + '\u0040' + d;
+                    a.setAttribute('href', 'mailto:' + addr);
+                    var t = a.querySelector('.email-text');
+                    if (t) t.textContent = addr;
+                });
+            })();
 
         // Core theme JS
         script(src='js/scripts.js')

@@ -77,11 +77,13 @@ html(lang='en')
                     .col-xl-7
                         .text-justified.text-lg-left
                             p.text-white.mb-3
-                                | Hey! I am Lennart, I am a mechanical engineer by training and a computational scientist by practice. I have recently finished my Ph.D. thesis at the TU Dresden and the Max-Planck Institute of Molecular Cell Biology and Genetrics and am transitioning into industry. The past four years, I have been part of the group of Ivo Sbalzarini that focuses on scientific machine learning and numerical simulations. My research here has focused on the description and adaptive discretization of dynamic surfaces, which are ubiquitous in nature and engineering.
-                                |  Before, I have studied Mechanical Engineering for my bachelor's and master's degrees at the TU München, with stays in Tokyo and as a visiting researcher at the Northwestern University, where I have been working on the simulation of water waves in the group of Robert Dalrymple.
+                                | Hey! I am Lennart, I am a mechanical engineer by training and a computational scientist by practice. I have recently finished my Ph.D. thesis at the TU Dresden and the Max-Planck Institute of Molecular Cell Biology and Genetrics and am transitioning into industry. The past four years, I have been part of the group of 
+                                a(href='https://www.mpi-cbg.de/research/researchgroups/currentgroups/ivo-sbalzarini/group-leader') Ivo Sbalzarini
+                                | that focuses on scientific machine learning and numerical simulations. My research here has focused on the description and adaptive discretization of dynamic surfaces, which are ubiquitous in nature and engineering.
+                                | Before, I have studied Mechanical Engineering for my bachelor's and master's degrees at the TU München, with stays in Tokyo and as a visiting researcher at the Northwestern University, where I have been working on the simulation of water waves in the group of Robert Dalrymple.
                                 br
                                 br
-                                | My work sits right at the intersection of scientific computing, physics and geometry.
+                                | My work sits right at the intersection of physics, numerical methods and high-performance computing.
                                 br
                                 br
                                 | For more details, see my 
@@ -106,9 +108,10 @@ html(lang='en')
                         .row.gx-0(style='margin-top: -7rem; margin-bottom: -8.5rem; position: relative; z-index: 2;')
                             .col-md-8.mx-auto
                                 .featured-text.text-justified.text-lg-left.p-4
-                                    h4.text-black Simulating Morphogenetic Models
+                                    h4.text-black Simulating morphogenetic models
                                     p.text-black.mb-0
                                         | Self-organizing shapes emerge from the interaction of physics and geometry. Here, we solve the non-linear and second-order reaction-diffusion equations within the continuously deforming surface, and allow for local growth depending on the concentration of the surface chemical. The PDE and the observed Turing patterns in the surface are influenced by the local emerging curvature, and the local curvature is determined by the PDE dynamics in the surface: A full feedback loop, from which organic shapes arise.
+                                        br
                                         br
                                         | Manuscript in preparation. 
                         // Video SE of text
@@ -125,9 +128,12 @@ html(lang='en')
                         .row.gx-0
                             .col-md-8.mx-auto
                                 .featured-text.text-justified.text-lg-left.p-4
-                                    h4.text-black Adaptive Sampling of Surfaces
+                                    h4.text-black Adaptive sampling of surfaces
                                     p.text-black.mb-0
                                         | Sampling curved surfaces with local regularity and global adaptivity is a long-standing problem in computer graphics and numerical methods. In this work, we use a gradient descent constrained to the curved surface to regularize point distributions for analytical surfaces and obtained from 3D scanning devices such as the 3D Stanford bunny. 
+                                        br
+                                        | The computed point discretizations of the curved surface allow for straightforward rendering without artifacts and robustness and accuracy of numerical methods during simulations.
+                                        br
                                         br
                                         | Currently under revision. Preprint is available at 
                                         a(href='https://arxiv.org/abs/2605.03803') arXiv:2605.03803
@@ -135,22 +141,33 @@ html(lang='en')
                         // Two small images side by side, centered, underneath
                         .row.gx-3.justify-content-center.align-items-center.mt-3
                             .col-md-3.col-6.text-center
-                                img.img-fluid(src='assets/img/cow.svg', alt='...', style='width: 130%;')
+                                img.img-fluid(src='assets/img/cow.svg', alt='...', style='width: 150%; max-width: none;')
                             .col-md-3.col-6.text-center
-                                img.img-fluid(src='assets/img/bunny.svg', alt='...', style='width: 120%;')
+                                img.img-fluid(src='assets/img/bunny.svg', alt='...', style='width: 130%; max-width: none;')
 
-                .row.gx-0.justify-content-center
-                    .column.col-lg-6.order-lg-first
-                        .bg-black.h-100.project
-                            .d-flex.h-100
-                                .project-text.w-100.my-auto
-                                    h4.text-white PROJECT 2 TITLE
-                                    p.mb-0.text-white-75
-                                        | PROJECT 2 DESCRIPTION. Link to 
-                                        a(href='YOUR_PAPER_URL') paper
-                                        | .
-                    .column.col-lg-6
-                        img.img-fluid(src='assets/img/YOUR_PROJECT_2_IMAGE.png', alt='...')
+                .row.gx-0.mb-4.align-items-center
+                    .col-12
+                        // Full-width black background wrapper
+                        div(style='background: linear-gradient(to bottom, #fff 0%, #000 8%, #000 92%, #fff 100%); width: 100vw; margin-left: calc(50% - 50vw); padding: 3rem 0;')
+                            .container
+                                // Project description (white text on black)
+                                .row.gx-0
+                                    .col-md-8.mx-auto
+                                        .featured-text.text-justified.text-lg-left.pt-4.px-4.pb-0
+                                            h4.text-white Describing and quantifying dynamic surfaces in numerical simulations
+                                            p.text-white.mb-0
+                                                | Real-world problems involve complex, and often dynamic surfaces. Either as boundary conditions, or as the domain of interest. An illustrative example of a dynamic surface is a hydrodynamic, incompressible droplet under surface tension, governed by the multi-phase Navier-Stokes equations.
+                                                br
+                                                | To track the surface, we propose a method based on local high-order polynomial regression, enabling the computation of derivative geometric quantities such as surface normals and mean and Gaussian curvatures.
+                                                br
+                                                br
+                                                | The paper is available at the
+                                                a(href='https://doi.org/10.1016/j.jcp.2024.113262') Journal of Computational Physics
+                                                | .
+                                // Video underneath
+                                .row.gx-0.justify-content-center
+                                    .col-md-8
+                                        video.img-fluid(src='assets/img/splittingDroplet.mp4', autoplay='', loop='', muted='', playsinline='', alt='Splitting droplet simulation')
 
                 h2.text-black
                     br
@@ -189,7 +206,7 @@ html(lang='en')
 
                         h2.text-black.mb-3 2026
                         p.text-black(align='left')
-                            | L. J. Schulze, and I. F. Sbalzarini: "Globally adaptive and locally regular point discretization of curved surfaces." Under review, 
+                            | L. J. Schulze, and I. F. Sbalzarini: "Globally adaptive and locally regular point discretization of curved surfaces." Under review, available at 
                             a(href='https://arxiv.org/abs/2605.03803') arXiv:2605.03803
 
                         h2.text-black.mb-3 2024
@@ -199,9 +216,15 @@ html(lang='en')
                                 i Journal of Computational Physics
                             | , 515, 113262 (2024)
 
+                        h2.text-black.mb-3 2022
+                        p.text-black(align='left')
+                            | L. J. Schulze, V. Zago, G. Bilotta, and R. A. Dalrymple. "Localized Kernel Gradient Correction for SPH Simulations of Water Wave Propagation."
+                            | Proceedings paper at the SPHERIC 2022 International Workshop. Available at 
+                            a(href='https://arxiv.org/abs/2511.10064') arXiv:2511.10064
+
                         h2.text-black.mb-3 2021
                         p.text-black(align='left')
-                            | V. Zago, L. J. Schulze, G. Bilotta, N. Al Mashaan, R. A. Dalrymple. "Overcoming excessive numerical dissipation in SPH modeling of water waves." 
+                            | V. Zago, L. J. Schulze, G. Bilotta, N. Al Mashaan, and R. A. Dalrymple. "Overcoming excessive numerical dissipation in SPH modeling of water waves." 
                             a(href='https://doi.org/10.1016/j.coastaleng.2021.104018')
                                 i Coastal Engineering
                             | , 170, 104018 (2021)
@@ -210,8 +233,7 @@ html(lang='en')
                         br
                         h1.text-black.mb-4 Ph.D. Thesis
                         p.text-black(align='left')
-                            | L. J. Schulze. 
-                            i Mesh-free Methods for the Adaptive Discretization and High-order Approximation of Dynamic Surfaces.
+                            | L. J. Schulze. "Mesh-free Methods for the Adaptive Discretization and High-order Approximation of Dynamic Surfaces."
                             |  Ph.D. thesis, TU Dresden, October 2025. Available at 
                             a(href='https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-1035546')
                                 i Sächsische Landesbibliothek - Staats- und Universitätsbibliothek Dresden

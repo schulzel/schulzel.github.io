@@ -76,7 +76,7 @@ html(lang='en')
                         img.img-fluid.mb-0.mb-lg-0(src='assets/img/headshot.jpg', alt='Lennart J. Schulze')
                     .col-xl-7
                         .text-justified.text-lg-left
-                            p.text-white.mb-3(align='left')
+                            p.text-white.mb-3
                                 | Hey! I am Lennart, I am a mechanical engineer by training and a computational scientist by practice. I have recently finished my Ph.D. thesis at the TU Dresden and the Max-Planck Institute of Molecular Cell Biology and Genetrics and am transitioning into industry. The past four years, I have been part of the group of Ivo Sbalzarini that focuses on scientific machine learning and numerical simulations. My research here has focused on the description and adaptive discretization of dynamic surfaces, which are ubiquitous in nature and engineering.
                                 |  Before, I have studied Mechanical Engineering for my bachelor's and master's degrees at the TU München, with stays in Tokyo and as a visiting researcher at the Northwestern University, where I have been working on the simulation of water waves in the group of Robert Dalrymple.
                                 br
@@ -94,34 +94,50 @@ html(lang='en')
         section#projects.projects-section.bg-white
             .container.px-3.px-lg-3
                 // Featured Project Row
-                .row.gx-0.mb-4.mb-lg-7.align-items-center
-                    h1.text-white Research
-                    .col-xl-6.col-lg-7
-                        img.img-fluid.mb-3.mb-lg-0(src='assets/img/YOUR_FEATURED_VIDEO_OR_GIF.gif', alt='...')
-                    .col-xl-6
-                        .featured-text.text-justified.text-lg-left
-                            h4.text-white YOUR FEATURED PROJECT TITLE
-                            p.text-white-50.mb-5
-                                | YOUR FEATURED PROJECT DESCRIPTION.
+                .row.gx-0.mb-4.align-items-center
+                    h1.text-white.m-0.p-0(style='line-height:0; height:0; overflow:hidden;') Research
+                    .col-12
+                        // Video NW of text
+                        .row.gx-0
+                            .col-md-7
+                                .overflow-hidden
+                                    video.img-fluid(src='assets/img/thesis_valpha.mp4', autoplay='', loop='', muted='', playsinline='', alt='Morphogenetic simulation alpha', style='clip-path: inset(0 13% 0 0); margin-right: -13%; width: 100%;')
+                        // Text overlapping both videos
+                        .row.gx-0(style='margin-top: -7rem; margin-bottom: -8.5rem; position: relative; z-index: 2;')
+                            .col-md-8.mx-auto
+                                .featured-text.text-justified.text-lg-left.p-4
+                                    h4.text-black Simulating Morphogenetic Models
+                                    p.text-black.mb-0
+                                        | Self-organizing shapes emerge from the interaction of physics and geometry. Here, we solve the non-linear and second-order reaction-diffusion equations within the continuously deforming surface, and allow for local growth depending on the concentration of the surface chemical. The PDE and the observed Turing patterns in the surface are influenced by the local emerging curvature, and the local curvature is determined by the PDE dynamics in the surface: A full feedback loop, from which organic shapes arise.
+                                        br
+                                        | Manuscript in preparation. 
+                        // Video SE of text
+                        .row.gx-0
+                            .col-md-5
+                            .col-md-7
+                                .overflow-hidden
+                                    video.img-fluid(src='assets/img/thesis_vgamma.mp4', autoplay='', loop='', muted='', playsinline='', alt='Morphogenetic simulation gamma', style='clip-path: inset(0 13% 0 0); width: 100%;')
 
                 // Project One Row
-                h2.text-black
-                    br
-                    br
-                    br
-                    | Published
-                .row.gx-0.justify-content-center
-                    .column.col-lg-6
-                        img.img-fluid(src='assets/img/YOUR_PROJECT_1_IMAGE.gif', alt='...')
-                    .column.col-lg-6
-                        .bg-green.h-100.project
-                            .d-flex.h-100
-                                .project-text.w-100.my-auto
-                                    h4.text-white PROJECT 1 TITLE
-                                    p.mb-0.text-white-75
-                                        | PROJECT 1 DESCRIPTION. Link to 
-                                        a(href='YOUR_PAPER_URL') paper
+                .row.gx-0.mb-4.align-items-center
+                    .col-12
+                        // Project description
+                        .row.gx-0
+                            .col-md-8.mx-auto
+                                .featured-text.text-justified.text-lg-left.p-4
+                                    h4.text-black Adaptive Sampling of Surfaces
+                                    p.text-black.mb-0
+                                        | Sampling curved surfaces with local regularity and global adaptivity is a long-standing problem in computer graphics and numerical methods. In this work, we use a gradient descent constrained to the curved surface to regularize point distributions for analytical surfaces and obtained from 3D scanning devices such as the 3D Stanford bunny. 
+                                        br
+                                        | Currently under revision. Preprint is available at 
+                                        a(href='https://arxiv.org/abs/2605.03803') arXiv:2605.03803
                                         | .
+                        // Two small images side by side, centered, underneath
+                        .row.gx-3.justify-content-center.align-items-center.mt-3
+                            .col-md-3.col-6.text-center
+                                img.img-fluid(src='assets/img/cow.svg', alt='...', style='width: 130%;')
+                            .col-md-3.col-6.text-center
+                                img.img-fluid(src='assets/img/bunny.svg', alt='...', style='width: 120%;')
 
                 .row.gx-0.justify-content-center
                     .column.col-lg-6.order-lg-first
@@ -192,12 +208,14 @@ html(lang='en')
 
                         br
                         br
-                        h1.text-black.mb-4 Thesis
+                        h1.text-black.mb-4 Ph.D. Thesis
                         p.text-black(align='left')
                             | L. J. Schulze. 
                             i Mesh-free Methods for the Adaptive Discretization and High-order Approximation of Dynamic Surfaces.
-                            |  Ph.D. thesis, TU Dresden, October 2025.
-
+                            |  Ph.D. thesis, TU Dresden, October 2025. Available at 
+                            a(href='https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-1035546')
+                                i Sächsische Landesbibliothek - Staats- und Universitätsbibliothek Dresden
+                            | .
         // Contact
         section#contact.contact-section.bg-black
             .container-fluid.px-4.px-lg-5
@@ -208,10 +226,6 @@ html(lang='en')
                             .card-title.text-center
                                 a(href='mailto:lennartjschulze@gmail.com')
                                     i.fas.fa-envelope.text-primary.mb-2.fa-3x
-                            .card-body.text-center
-                                i.fas.fa-map-marked-alt.text-primary.mb-2.fa-3x
-                                .small.text-black-50
-                                    | Dresden, Germany
 
         // Footer
         footer.footer.bg-black.small.text-white-50

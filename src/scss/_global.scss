@@ -14,3 +14,8 @@ html {
 body {
     letter-spacing: $base-letter-spacing;
 }
+
+.text-justified {
+    text-align: justify;
+    hyphens: auto;
+}

@@ -73,7 +73,7 @@
                     <div class="col-xl-5"><img class="img-fluid mb-0 mb-lg-0" src="assets/img/headshot.jpg" alt="Lennart J. Schulze" /></div>
                     <div class="col-xl-7">
                         <div class="text-justified text-lg-left">
-                            <p class="text-white mb-3" align="left">
+                            <p class="text-white mb-3">
                                 Hey! I am Lennart, I am a mechanical engineer by training and a computational scientist by practice. I have recently finished my Ph.D. thesis at the TU Dresden and the Max-Planck Institute of Molecular Cell Biology and Genetrics and am transitioning into industry. The past four years, I have been part of the group of Ivo Sbalzarini that focuses on scientific machine learning and numerical simulations. My research here has focused on the description and adaptive discretization of dynamic surfaces, which are ubiquitous in nature and engineering. Before, I have studied Mechanical Engineering for my bachelor's and master's degrees at the TU München, with stays in Tokyo and as a visiting researcher at the Northwestern University, where I have been working on the simulation of water waves in the group of Robert Dalrymple.
                                 <br />
                                 <br />
@@ -95,37 +95,59 @@
         <section class="projects-section bg-white" id="projects">
             <div class="container px-3 px-lg-3">
                 <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-7 align-items-center">
-                    <h1 class="text-white">Research</h1>
-                    <div class="col-xl-6 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/YOUR_FEATURED_VIDEO_OR_GIF.gif" alt="..." /></div>
-                    <div class="col-xl-6">
-                        <div class="featured-text text-justified text-lg-left">
-                            <h4 class="text-white">YOUR FEATURED PROJECT TITLE</h4>
-                            <p class="text-white-50 mb-5">YOUR FEATURED PROJECT DESCRIPTION.</p>
+                <div class="row gx-0 mb-4 align-items-center">
+                    <h1 class="text-white m-0 p-0" style="line-height: 0; height: 0; overflow: hidden">Research</h1>
+                    <div class="col-12">
+                        <!-- Video NW of text-->
+                        <div class="row gx-0">
+                            <div class="col-md-7">
+                                <div class="overflow-hidden"><video class="img-fluid" src="assets/img/thesis_valpha.mp4" autoplay="" loop="" muted="" playsinline="" alt="Morphogenetic simulation alpha" style="clip-path: inset(0 13% 0 0); margin-right: -13%; width: 100%"></video></div>
+                            </div>
+                        </div>
+                        <!-- Text overlapping both videos-->
+                        <div class="row gx-0" style="margin-top: -7rem; margin-bottom: -8.5rem; position: relative; z-index: 2">
+                            <div class="col-md-8 mx-auto">
+                                <div class="featured-text text-justified text-lg-left p-4">
+                                    <h4 class="text-black">Simulating Morphogenetic Models</h4>
+                                    <p class="text-black mb-0">
+                                        Self-organizing shapes emerge from the interaction of physics and geometry. Here, we solve the non-linear and second-order reaction-diffusion equations within the continuously deforming surface, and allow for local growth depending on the concentration of the surface chemical. The PDE and the observed Turing patterns in the surface are influenced by the local emerging curvature, and the local curvature is determined by the PDE dynamics in the surface: A full feedback loop, from which organic shapes arise.
+                                        <br />
+                                        Manuscript in preparation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Video SE of text-->
+                        <div class="row gx-0">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-7">
+                                <div class="overflow-hidden"><video class="img-fluid" src="assets/img/thesis_vgamma.mp4" autoplay="" loop="" muted="" playsinline="" alt="Morphogenetic simulation gamma" style="clip-path: inset(0 13% 0 0); width: 100%"></video></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Project One Row-->
-                <h2 class="text-black">
-                    <br />
-                    <br />
-                    <br />
-                    Published
-                </h2>
-                <div class="row gx-0 justify-content-center">
-                    <div class="column col-lg-6"><img class="img-fluid" src="assets/img/YOUR_PROJECT_1_IMAGE.gif" alt="..." /></div>
-                    <div class="column col-lg-6">
-                        <div class="bg-green h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto">
-                                    <h4 class="text-white">PROJECT 1 TITLE</h4>
-                                    <p class="mb-0 text-white-75">
-                                        PROJECT 1 DESCRIPTION. Link to
-                                        <a href="YOUR_PAPER_URL">paper</a>
+                <div class="row gx-0 mb-4 align-items-center">
+                    <div class="col-12">
+                        <!-- Project description-->
+                        <div class="row gx-0">
+                            <div class="col-md-8 mx-auto">
+                                <div class="featured-text text-justified text-lg-left p-4">
+                                    <h4 class="text-black">Adaptive Sampling of Surfaces</h4>
+                                    <p class="text-black mb-0">
+                                        Sampling curved surfaces with local regularity and global adaptivity is a long-standing problem in computer graphics and numerical methods. In this work, we use a gradient descent constrained to the curved surface to regularize point distributions for analytical surfaces and obtained from 3D scanning devices such as the 3D Stanford bunny.
+                                        <br />
+                                        Currently under revision. Preprint is available at
+                                        <a href="https://arxiv.org/abs/2605.03803">arXiv:2605.03803</a>
                                         .
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Two small images side by side, centered, underneath-->
+                        <div class="row gx-3 justify-content-center align-items-center mt-3">
+                            <div class="col-md-3 col-6 text-center"><img class="img-fluid" src="assets/img/cow.svg" alt="..." style="width: 130%" /></div>
+                            <div class="col-md-3 col-6 text-center"><img class="img-fluid" src="assets/img/bunny.svg" alt="..." style="width: 120%" /></div>
                         </div>
                     </div>
                 </div>
@@ -209,7 +231,9 @@
                         <p class="text-black" align="left">
                             L. J. Schulze.
                             <i>Mesh-free Methods for the Adaptive Discretization and High-order Approximation of Dynamic Surfaces.</i>
-                            Ph.D. thesis, TU Dresden, October 2025.
+                            Ph.D. thesis, TU Dresden, October 2025. Available at
+                            <a href="https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-1035546"><i>Sächsische Landesbibliothek - Staats- und Universitätsbibliothek Dresden</i></a>
+                            .
                         </p>
                     </div>
                 </div>
@@ -224,10 +248,6 @@
                         <div class="card py-4 h-100">
                             <div class="card-title text-center">
                                 <a href="mailto:lennartjschulze@gmail.com"><i class="fas fa-envelope text-primary mb-2 fa-3x"></i></a>
-                            </div>
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2 fa-3x"></i>
-                                <div class="small text-black-50">Dresden, Germany</div>
                             </div>
                         </div>
                     </div>

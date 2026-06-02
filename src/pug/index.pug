@@ -45,6 +45,9 @@ html(lang='en')
                             a.nav-link(href='#publications')
                                 b Publications
                         li.nav-item
+                            a.nav-link(href='#more')
+                                b More
+                        li.nav-item
                             a.nav-link(href='#contact')
                                 b Contact
                         li.nav-item
@@ -187,7 +190,7 @@ html(lang='en')
 
         // Publications
         section#publications.publications-section.bg-white
-            .container-fluid.px-4.px-lg-5
+            .container.px-3.px-lg-3
                 .row.gx-4.gx-lg-5.justify-content-center
                     .col-lg-8
                         h1.text-black.mb-4 Publications
@@ -226,6 +229,23 @@ html(lang='en')
                             a(href='https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-1035546')
                                 i Sächsische Landesbibliothek - Staats- und Universitätsbibliothek Dresden
                             | .
+
+        // More (side projects, embedded apps)
+        section#more.more-section.bg-white
+            .container.px-3.px-lg-3
+                .row.gx-4.gx-lg-5.justify-content-center.align-items-center
+                    .col-lg-5
+                        h1.text-black.mb-4 More stuff
+                        p.text-black.mb-4.text-justified
+                            | Knowing a city means knowing its public transport, how hallmark places connect and how to traverse them quickly. Inspired by the 
+                            a(href='https://scied.ucar.edu/apps/cloud-guide') Field Guide To Clouds App from the UCAR Center for Science Education
+                            | , I created a similar app for public transport in Berlin and Munich. Click  
+                            a(href='https://lenny-theta.vercel.app/', target='_blank', rel='noopener') here
+                            |  to open it in a new tab, otherwise find it embedded here. Happy guessing :)
+                    .col-lg-5.col-md-6.col-10
+                        .embed-frame.embed-frame-portrait
+                            iframe(src='https://lenny-theta.vercel.app/', title='Side project', loading='lazy', allow='clipboard-read; clipboard-write', referrerpolicy='no-referrer-when-downgrade')
+
         // Contact
         section#contact.contact-section
             .container-fluid.px-4.px-lg-5

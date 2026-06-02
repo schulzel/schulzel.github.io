@@ -1,0 +1,42 @@
+//
+// More
+//
+
+.more-section {
+    padding: 5rem 0;
+
+    // Phone-shaped frame. The iframe is rendered at a real phone width (390px)
+    // and then visually scaled down so the embedded app keeps its mobile layout
+    // (no re-wrapping at the narrow displayed size).
+    $embed-w: 390px;
+    $embed-h: 845px; // 9:19.5 ratio
+    $embed-display-w: 320px; // size on the page
+    $embed-scale: $embed-display-w / $embed-w;
+
+    .embed-frame {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+        background: #fff;
+    }
+
+    .embed-frame-portrait {
+        position: relative;
+        width: $embed-display-w;
+        height: $embed-h * $embed-scale;
+        margin-left: auto;
+        margin-right: auto;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $embed-w;
+            height: $embed-h;
+            border: 0;
+            transform-origin: top left;
+            transform: scale($embed-scale);
+        }
+    }
+}
+

@@ -11005,6 +11005,9 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
+#mainNav.navbar-shrink .navbar-brand {
+  opacity: 1;
+}
 #mainNav .navbar-nav .nav-item:hover {
   color: fade(#fff, 80%);
   outline: none;
@@ -11157,6 +11160,7 @@ body {
 .projects-section {
   padding: 6rem 0 3rem 0;
   background: linear-gradient(to bottom, #000 0%, #fff 4rem, #fff 100%);
+  overflow-x: clip;
 }
 .projects-section .adaptive-sampling-row {
   position: relative;

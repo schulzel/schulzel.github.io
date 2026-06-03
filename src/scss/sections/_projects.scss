@@ -8,6 +8,7 @@
         $black 0%,
         $white 4rem,
         $white 100%);
+    overflow-x: clip;
 
     .adaptive-sampling-row {
         position: relative;

@@ -9,6 +9,21 @@
         $white 4rem,
         $white 100%);
 
+    .adaptive-sampling-row {
+        position: relative;
+        z-index: 3;
+        margin-top: -9rem;
+        pointer-events: none;
+
+        .featured-text {
+            background: transparent;
+
+            * {
+                pointer-events: auto;
+            }
+        }
+    }
+
     .featured-text {
         padding: 2rem;
 
